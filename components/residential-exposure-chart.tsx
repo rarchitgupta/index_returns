@@ -67,7 +67,7 @@ export function ResidentialExposureChart() {
               {chartData.map((entry, index) => (
                 <Cell
                   key={`cell-${index}`}
-                  fill={chartConfig[entry.id as keyof typeof chartConfig].color}
+                  fill={((chartConfig[entry.id as keyof typeof chartConfig] as any)?.color) || "var(--chart-1)"}
                 />
               ))}
             </Pie>
